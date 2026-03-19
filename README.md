@@ -1,5 +1,5 @@
-## 🧪 Zubai Challenge — AI Integration Agent
-# 🚀 Descripción
+# 🧪 Zubai Challenge — AI Integration Agent
+## 🚀 Descripción
 
 Este proyecto implementa un sistema que, a partir de un API spec, genera automáticamente una integración en Node.js, la ejecuta y normaliza la respuesta.
 El enfoque no fue solo consumir un API, sino simular un flujo donde el sistema:
@@ -9,7 +9,7 @@ El enfoque no fue solo consumir un API, sino simular un flujo donde el sistema:
 * maneja errores
 * produce datos estandarizados
 
-# ▶️ Cómo correrlo
+## ▶️ Cómo correrlo
 1. Instalar dependencias
 - npm install
 2. Ejecutar el generador
@@ -18,7 +18,7 @@ El enfoque no fue solo consumir un API, sino simular un flujo donde el sistema:
 - node runner.js
 
 
-# 🧠 Decisiones clave
+## 🧠 Decisiones clave
 * Separé la generación (generador.js) de la ejecución (runner.js) para simular un sistema modular
 
 * Implementé retry automático con 3 intentos para hacer el sistema más resiliente
@@ -28,7 +28,7 @@ El enfoque no fue solo consumir un API, sino simular un flujo donde el sistema:
 * Normalicé la salida para desacoplar el proveedor del formato final
 
 
-# ⚙️ Decisión técnica: Fetch nativo (Node.js)
+## ⚙️ Decisión técnica: Fetch nativo (Node.js)
 Inicialmente el proyecto utilizaba `node-fetch` como dependencia externa para realizar peticiones HTTP.
 Sin embargo, decidí migrar al `fetch` nativo disponible en Node.js (v18+), lo que permitió:
 
@@ -42,7 +42,7 @@ Esto se alinea mejor con el objetivo de construir sistemas autónomos.
 
 
 
-# 🤖 Uso de IA
+## 🤖 Uso de IA
 Utilicé IA (ChatGPT / Cursor) para:
 Generar una base del código
 Definir la estructura del sistema
@@ -51,6 +51,6 @@ Detectar y corregir errores
 La lógica final fue validada y ajustada manualmente tras ejecutar el sistema.
 
 
-# ⚔️ Mensaje final
+## ⚔️ Mensaje final
 This is not about writing code.
 This is about building systems that can write and fix code.
