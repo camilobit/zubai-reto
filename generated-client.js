@@ -1,24 +1,27 @@
 
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
-async function fetchWithRetry(url, retries = 3) {
-try {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error("Request failed");
-  }; 
 
-  return await response.json();
-} catch (error) {
-  if (retries > 0) {
-    console.log("Retrying...");
-    return fetchWithRetry(url, retries - 1);
+// funcion para realizar fetch con reintentos, en caso de que falle la solicitud.
+
+  async function fetchWithRetry(url, retries = 3) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Request failed");
+    }; 
+  
+    return await response.json();
+  } catch (error) {
+    if (retries > 0) {
+      console.log("Retrying...");
+      return fetchWithRetry(url, retries - 1);
+    }
+      throw error;
   }
-    throw error;
-}
-}
-
-async function run() {
+  }
+  
+  async function run() {
   try {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
 
