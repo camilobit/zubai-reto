@@ -28,6 +28,20 @@ node runner.js
 * Normalicé la salida para desacoplar el proveedor del formato final
 
 
+## ⚙️ Decisión técnica: Fetch nativo (Node.js)
+Inicialmente el proyecto utilizaba `node-fetch` como dependencia externa para realizar peticiones HTTP.
+Sin embargo, decidí migrar al `fetch` nativo disponible en Node.js (v18+), lo que permitió:
+
+- Eliminar dependencias externas
+- Simplificar el código generado
+- Mejorar la portabilidad del sistema
+- Ejecutar el proyecto sin configuraciones adicionales
+
+Esto se alinea mejor con el objetivo de construir sistemas autónomos.
+
+
+
+
 🤖 Uso de IA
 Utilicé IA (ChatGPT / Cursor) para:
 Generar una base del código
