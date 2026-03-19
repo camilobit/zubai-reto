@@ -1,0 +1,10 @@
+{
+  "name": "Test API",
+  "base_url": "https://jsonplaceholder.typicode.com",
+  "endpoints": [
+    {
+      "path": "/posts",
+      "method": "GET"
+    }
+  ]
+}
