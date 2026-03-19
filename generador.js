@@ -4,8 +4,7 @@ function generadorCodigo(spec) {
   const endpoint = spec.endpoints[0];
 
   return `
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-
+//const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 // Fetch con retry configurado con 3 intentos.
 async function fetchWithRetry(url, retries = 3) {
   try {
